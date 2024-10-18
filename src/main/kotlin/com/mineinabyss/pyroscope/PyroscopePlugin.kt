@@ -14,6 +14,7 @@ class PyroscopePlugin : JavaPlugin() {
     data class Config(
         val applicationName: String = "minecraft",
         val serverAddress: String = "http://pyroscope-server:4040",
+        val allocSize: String = "512k"
     )
 
     override fun onEnable() {
@@ -34,7 +35,9 @@ class PyroscopePlugin : JavaPlugin() {
 
     private fun start() {
         val env = System.getenv()
-        val labels = mapOf("server" to (env["SERVER_NAME"] ?: "unknown"))
+        val labels = mapOf(
+            "server" to (env["SERVER_NAME"] ?: "unknown")
+        )
         val config by config("config", dataPath, Config())
         logger.info("Starting Pyroscope with config: $config")
         PyroscopeAgent.start(
@@ -42,7 +45,7 @@ class PyroscopePlugin : JavaPlugin() {
                 .setLabels(labels)
                 .setApplicationName(config.applicationName)
                 .setProfilingEvent(EventType.ITIMER)
-                .setProfilingAlloc("512k")
+                .setProfilingAlloc(config.allocSize)
                 .setFormat(Format.JFR)
                 .setServerAddress(config.serverAddress)
                 .build()

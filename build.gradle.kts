@@ -2,8 +2,8 @@ plugins {
     alias(idofrontLibs.plugins.mia.kotlin.jvm)
     alias(idofrontLibs.plugins.mia.copyjar)
     alias(idofrontLibs.plugins.mia.papermc)
+    alias(idofrontLibs.plugins.mia.autoversion)
     alias(idofrontLibs.plugins.kotlinx.serialization)
-    // ...
 }
 
 repositories {
