@@ -1,0 +1,13 @@
+name: Pyroscope
+version: ${plugin_version}
+author: Offz
+load: STARTUP
+main: com.mineinabyss.pyroscope.PyroscopePlugin
+api-version: '1.21'
+
+dependencies:
+  server:
+    Idofront:
+      required: true
+      load: BEFORE
+      join-classpath: true
