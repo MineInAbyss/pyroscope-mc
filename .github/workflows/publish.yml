@@ -19,7 +19,5 @@ jobs:
 
       - uses: MineInAbyss/publish-action@develop
         with:
-          maven-username: ${{ secrets.MAVEN_PUBLISH_USERNAME }}
-          maven-password: ${{ secrets.MAVEN_PUBLISH_PASSWORD }}
           release-files: |
             ${{ github.workspace }}/publish/*.jar
