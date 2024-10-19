@@ -19,5 +19,6 @@ jobs:
 
       - uses: MineInAbyss/publish-action@develop
         with:
+          build-tasks: 'build'
           release-files: |
             ${{ github.workspace }}/publish/*.jar
