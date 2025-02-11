@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.pyroscope:agent:0.14.0")
+    implementation("io.pyroscope:agent:0.18.0")
 }
 
 tasks.test {
